@@ -1,4 +1,4 @@
-# Memory game
+# TODO List
 
 Simple TODO list with add, check and trash options.
 
