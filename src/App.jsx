@@ -45,11 +45,18 @@ export function App(){
 
   return (
     <Fragment>
-      <TodoList todos={todos} toggleTodo={toggleTodo}/>
-      <input ref={todoTaskRef} type="text" placeholder="Nueva Tarea"/>
-      <button onClick={handleTodoAdd}>➕</button>
-      <button onClick={handleClearAll}>🗑️</button>
-      <div>Te quedan {todos.filter((todo) => !todo.completed).length} por completar</div>
+      <div className="form">
+        <input ref={todoTaskRef} type="text" placeholder="Nueva Tarea"/>
+        <button className="addButton" onClick={handleTodoAdd}>➕</button>
+        <button className="trashButton" onClick={handleClearAll}>🗑️</button>
+      </div>
+      <div className="pending">
+        Te quedan {todos.filter((todo) => !todo.completed).length} por completar
+      </div>
+      <div className="list">
+        <TodoList todos={todos} toggleTodo={toggleTodo}/>
+      </div>
+      
     </Fragment>
   );
 }
